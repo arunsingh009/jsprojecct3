@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gradient Genrator</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        main{
+            background: linear-gradient(to right, #3ae74e,#f03a3a);
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content:space-around;
+            flex-direction: column;
+        }
+        .cnt{
+            width: 70%;
+            height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            flex-direction: column;
+            border: 2px solid black;
+        }
+        main input{
+            border: 2px solid black;
+            width: 150px;
+            height: 70px;
+            
+        }
+        .btn{
+            width: 50%;
+            justify-content: space-around;
+            display: flex;
+        }
+        .output{
+            width: 60%;
+            height: 40vh;
+            /* border: 2px solid black; */
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            flex-direction: column;
+            margin-top: 5vh;
+        }
+        .code{
+            width:90%;
+            height: 50px;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 17px;
+            font-weight: bold;
+            text-transform: capitalize;
+        }
+        .nose{
+            width: 80px;
+            height: 80px;
+            background-color: #111111;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 100%;
+            cursor: pointer;
+           
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Gradient Genrator</h1>
+        <div class="cnt">
+        <div class="btn">
+        <input type="color" id="color1" value="#00ff00" >
+        <input type="color" id="color2" value="#ff0000" >
+    </div>
+    <div class="output">
+        <button class="nose" onclick="output()">
+            <h3>click me</h3>
+        </button>
+        <div class="code" id="code">
+            background-image: linear-gradient(to right, #3ae74e,#f03a3a);
+        </div>
+    </div>
+
+    </div>
+    </main>
+
+
+    <script>
+        let x = document.querySelector("main");
+         
+        let c1 = document.getElementById("color1");
+        let c2 = document.getElementById("color2");
+
+        function output(){
+            let y;
+            x.style.background = `linear-gradient(to right,${c1.value},${c2.value})`;
+            
+
+            y = x.style.backgroundImage;
+            document.getElementById("code").innerHTML = y;
+
+        } 
+    </script>
+    
+</body>
+</html>
